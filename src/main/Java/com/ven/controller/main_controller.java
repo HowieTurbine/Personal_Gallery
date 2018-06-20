@@ -10,4 +10,9 @@ public class main_controller{
     {
         return "index.html";
     }
+    @RequestMapping("/new")
+    public String newPage()
+    {
+        return "new.html";
+    }
 }
