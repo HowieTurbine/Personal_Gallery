@@ -27,7 +27,7 @@ public class DownloadSession {
         }
         for(ImageEntity a:list)
         {
-            System.out.println(a.getFileName());
+
         }
         System.out.println("Size: "+list.size());
         session.close();

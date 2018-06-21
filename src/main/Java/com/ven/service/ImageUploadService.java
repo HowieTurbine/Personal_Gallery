@@ -18,10 +18,9 @@ public class ImageUploadService {
         this.uploadSession = uploadSession;
     }
 
-    public void upload(MultipartFile file, String author, String content,String fileName) throws IOException {
+    public void upload(MultipartFile file, String author, String content) throws IOException {
         ImageEntity imageEntity=new ImageEntity();
         byte[] data=file.getBytes();
-        imageEntity.setFileName(fileName);
         imageEntity.setImages(data);
         imageEntity.setAuthor(author);
         imageEntity.setDes(content);
