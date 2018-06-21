@@ -161,7 +161,9 @@
                 $.ajax({
                     type:'POST',
                     url:"./upload",
-                    contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+                    contentType:false,
+                    processData: false,
+                    cache:false,
                     data:formData,// 要提交的表单
                     success: function(data)
                     {
