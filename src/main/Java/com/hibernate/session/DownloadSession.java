@@ -37,7 +37,7 @@ public class DownloadSession {
     {
         Session session = sessionFactory.openSession();
         session.clear();
-        Query query = session.createQuery("from ImageEntity E order by E.date desc ");
+        Query query = session.createQuery("from ImageEntity E");
         List<ImageEntity> list;
         {
             list = query.list();

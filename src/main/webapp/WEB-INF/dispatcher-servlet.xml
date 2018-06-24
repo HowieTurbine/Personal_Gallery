@@ -17,13 +17,13 @@
 
     <mvc:annotation-driven />
 
-    <!-- 静态资源(js、image等)的访问 -->
+    <!--&lt;!&ndash; 静态资源(js、image等)的访问 &ndash;&gt;-->
     <mvc:default-servlet-handler />
     <mvc:resources mapping="/css/**" location="/WEB-INF/views/html/css/" />
     <mvc:resources mapping="/js/**" location="/WEB-INF/views/html/js/"/>
     <mvc:resources mapping="/images/**" location="/WEB-INF/views/html/images/"/>
     <mvc:resources mapping="/sass/**" location="/WEB-INF/views/html/sass/"/>
-    <mvc:resources mapping="/main" location="/WEB-INF/views/html"/>
+    <mvc:resources mapping="/main/**" location="/WEB-INF/views/html"/>
 
     <!--整合hibernate-->
 
@@ -96,7 +96,14 @@
         </property>
     </bean>
 
-
+    <!-- 上传文件 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"/>
+        <!-- 最大内存大小 -->
+        <property name="maxInMemorySize" value="10240"/>
+        <!-- 最大文件大小，-1为不限制大小 -->
+        <property name="maxUploadSize" value="-1"/>
+    </bean>
 
 
 </beans>

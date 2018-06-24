@@ -15,4 +15,6 @@ public class main_controller{
     {
         return "new.html";
     }
+    @RequestMapping("/test")
+    public String test(){return "test.html";}
 }

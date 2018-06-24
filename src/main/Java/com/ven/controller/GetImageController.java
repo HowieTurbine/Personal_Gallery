@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 @Controller
+@RequestMapping("/get")
 public class GetImageController {
     final private ImageDownloadService imageDownloadService;
 
@@ -23,7 +24,7 @@ public class GetImageController {
         this.imageDownloadService = imageDownloadService;
     }
 
-    @RequestMapping("/get/image")
+    @RequestMapping("/image")
     @ResponseBody
     public String getImage(@RequestParam(value = "id", required = true) int id,
                          HttpServletResponse httpServletResponse) throws IOException {
