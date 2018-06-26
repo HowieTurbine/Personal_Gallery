@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-public class ImageUploadController {
+public class ImageUploadController extends ExceptionController{
     private final ImageUploadService service;
 
     @Autowired

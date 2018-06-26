@@ -1,10 +1,13 @@
 package com.ven.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class main_controller{
+public class main_controller extends ExceptionController{
     @RequestMapping("/main")
     public String main()
     {
@@ -15,6 +18,6 @@ public class main_controller{
     {
         return "new.html";
     }
-    @RequestMapping("/test")
-    public String test(){return "test.html";}
+
+
 }

@@ -1,5 +1,6 @@
 package com.ven.controller;
 
+import com.hibernate.model.IdListEntity;
 import com.hibernate.model.ImageEntity;
 import com.ven.service.ImageDownloadService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +27,11 @@ public class GetEntityIDController {
     @ResponseBody
     public List<Integer> getIDs()
     {
-        List<ImageEntity> imageEntities = imageDownloadService.selectAll();
+        List<IdListEntity> imageEntities = imageDownloadService.selectAll();
         List<Integer> res = new ArrayList<>();
-        for(ImageEntity entity: imageEntities)
+        for(IdListEntity entity: imageEntities)
         {
-            res.add(entity.getId());
+            res.add(entity.getIdImg());
         }
         Collections.reverse(res);
         return res;

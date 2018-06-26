@@ -1,5 +1,6 @@
 package com.hibernate.session;
 
+import com.hibernate.model.IdListEntity;
 import com.hibernate.model.ImageEntity;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -33,18 +34,18 @@ public class DownloadSession {
         session.close();
         return list.get(0);
     }
-    public List<ImageEntity> downloadAll()
+    public List<IdListEntity> downloadAll()
     {
         Session session = sessionFactory.openSession();
         session.clear();
-        Query query = session.createQuery("from ImageEntity E");
-        List<ImageEntity> list;
+        Query query = session.createQuery("from IdListEntity E");
+        List<IdListEntity> list;
         {
             list = query.list();
         }
-        for(ImageEntity a:list)
+        for(IdListEntity a:list)
         {
-            System.out.println(a.getDate());
+            System.out.println(a.getIdImg());
         }
         session.close();
         return list;

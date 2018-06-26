@@ -1,5 +1,6 @@
 package com.ven.service;
 
+import com.hibernate.model.IdListEntity;
 import com.hibernate.model.ImageEntity;
 import com.hibernate.session.DownloadSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class ImageDownloadService {
         this.downloadSession = downloadSession;
     }
 
-    public List<ImageEntity> selectAll()
+    public List<IdListEntity> selectAll()
     {
         return downloadSession.downloadAll();
     }
