@@ -12,6 +12,7 @@
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
   <!-- 
 	//////////////////////////////////////////////////////
@@ -68,7 +69,7 @@
 		<!-- Icomoon Icon Fonts-->
 		<link rel="stylesheet" href="css/icomoon.css">
 		<!-- Magnific Popup -->
-		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!--<link rel="stylesheet" href="css/magnific-popup.css">-->
 		<!-- Salvattore -->
 		<link rel="stylesheet" href="css/salvattore.css">
 		<!-- Theme Style -->
@@ -80,7 +81,20 @@
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
 
-	</head>
+		<script language=javascript>
+            <!-- Begin-->
+            if (screen.width >= 600)
+            {
+                document.write('<link href="css/itemNew.css" rel="stylesheet" type="text/css" />');
+            }
+            else
+            {
+                document.write('<link href="css/itemNew-small.css" rel="stylesheet" type="text/css" />');
+            }
+		</script>
+
+
+            </head>
 	<body>
 
 	<div id="fh5co-offcanvass">
@@ -104,21 +118,15 @@
 		</div>
 	</header>
 	<!-- END .header -->
-	<style>
-		.itemNew {
-			margin: 10px 10px 20px 10px;
-			background: #fff;
-			width: 600px;
-		}
-	</style>
 
 
-	<div id="fh5co-main">
+
+	<div>
 		<div class="container">
 
 			<div class="row">
 
-        <div id="fh5co-board" align="center">
+        <div id="board" align="center">
 		<script>
 
             //获得ID
@@ -151,13 +159,13 @@
                                     var message = "<h4>" + author + ": </h4>" + content
 
                                     var html = "<div class=\"itemNew\">";
-                                    html += "<div >";
-                                    html += "<a href=\"" + image + "\"  data-lightbox=\"roadtrip\" ><img  src=  " + image + " width='500px' height='auto'></a>"
+                                    html += "<div min-width='200px'>";
+                                    html += "<a href=\"" + image + "\"  data-lightbox=\"roadtrip\" ><img class='itemNew-img' src=  " + image + "></a>"
                                     html += "</div>"
-                                    html += "<div class='fh5co-desc'>" + message + "</div>"
+                                    html += "<div >" + message + "</div>"
                                     html += "</div>";
 
-                                    $('#fh5co-board').append(html);
+                                    $('#board').append(html);
                                 }
                             })
                         })

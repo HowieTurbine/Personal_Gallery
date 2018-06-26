@@ -1,0 +1,9 @@
+.itemNew {
+    margin: 10px 10px 20px 10px;
+    background: #fff;
+    width: 600px;
+}
+.itemNew-img{
+    width:500px;
+    height:auto;
+}
